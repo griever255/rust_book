@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "ch3_examples"
+name = "summary"
 version = "0.1.0"
