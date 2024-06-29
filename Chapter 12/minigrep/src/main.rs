@@ -6,7 +6,7 @@ use minigrep::Config;
 fn main() {
     // Listing 12-1: Collecting the command line 
     // arguments into a vector and printing them
-    let args: Vec<String> = env::args().collect();
+    // let args: Vec<String> = env::args().collect();
     // dbg!(args);
 
     // Listing 12-2: Creating variables to hold
@@ -15,7 +15,9 @@ fn main() {
     // building a Config fails
     // Listing 12-24: Writing error messages to standard error
     // instead of standard output using eprintln!
-    let config = Config::build(&args).unwrap_or_else(|err| {
+    // Listing 13-18: Passing the return value of env::args to
+    // Config::build
+    let config = Config::build(env::args()).unwrap_or_else(|err| {
         eprintln!("Problem parsing arguments: {err}");
         process::exit(1);
     });
